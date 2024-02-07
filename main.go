@@ -3,6 +3,8 @@ package main
 import "fmt"
 
 func main() {
+	// ARRAY EXAMPLE
+
 	//eg1
 	fmt.Println("Array samples in golang")
 	// var arr1 [3]string
