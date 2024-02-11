@@ -25,24 +25,50 @@ import "fmt"
 
 //SLICES
 
-func main() {
-	fmt.Println("Array samples in golang")
-	//eg1
-	var arr1 []string
-	arr1 = []string{"car", "bus", "bike"}
-	fmt.Println("arr1: ", arr1)
-	// eg2
-	var arr2 = []string{"cat", "dog", "Tiger"}
-	fmt.Println("arr2: ", arr2)
-	//eg3
-	arr3 := []int{10, 20, 30}
-	arr4 := []string{"mrudul", "achu"}
-	fmt.Printf("value of arr3: %v , value of arr4: %v", arr3, arr4)
-	fmt.Println("")
+// func main() {
+// 	fmt.Println("Array samples in golang")
+// 	//eg1
+// 	var arr1 []string
+// 	arr1 = []string{"car", "bus", "bike"}
+// 	fmt.Println("arr1: ", arr1)
+// 	// eg2
+// 	var arr2 = []string{"cat", "dog", "Tiger"}
+// 	fmt.Println("arr2: ", arr2)
+// 	//eg3
+// 	arr3 := []int{10, 20, 30}
+// 	arr4 := []string{"mrudul", "achu"}
+// 	fmt.Printf("value of arr3: %v , value of arr4: %v", arr3, arr4)
+// 	fmt.Println("")
 
-	// eg4
-	s := []int{1, 2, 3, 4, 5}
-	fmt.Println("value of slice s = ", s)
-	s = append(s, 6, 7, 8)
-	fmt.Println("updated value of slice s = ", s)
+// 	// eg4
+// 	s := []int{1, 2, 3, 4, 5}
+// 	fmt.Println("value of slice s = ", s)
+// 	s = append(s, 6, 7, 8)
+// 	fmt.Println("updated value of slice s = ", s)
+// }
+
+//Maps in go
+func main() {
+	fmt.Println("Golang with maps")
+	temp := map[string]string{
+		"key1": "value1",
+		"key2": "value2",
+	}
+	fmt.Println(temp)
+
+	m := map[string][]string{
+		"coffee": {"Coffee", "Coffee-Late"},
+		"tea":    {"chai", "Latte", "Chai-Latte"},
+	}
+	fmt.Println(m)
+	fmt.Println(m["coffee"])
+
+	//append
+	m["others"] = []string{"milk", "water"}
+	fmt.Println(m)
+
+	//deleting
+	delete(m, "tea")
+	fmt.Println(m)
+
 }
