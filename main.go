@@ -48,27 +48,101 @@ import "fmt"
 // }
 
 //Maps in go
+// func main() {
+// 	fmt.Println("Golang with maps")
+// 	temp := map[string]string{
+// 		"key1": "value1",
+// 		"key2": "value2",
+// 	}
+// 	fmt.Println(temp)
+
+// 	m := map[string][]string{
+// 		"coffee": {"Coffee", "Coffee-Late"},
+// 		"tea":    {"chai", "Latte", "Chai-Latte"},
+// 	}
+// 	fmt.Println(m)
+// 	fmt.Println(m["coffee"])
+
+// 	//append
+// 	m["others"] = []string{"milk", "water"}
+// 	fmt.Println(m)
+
+// 	//deleting
+// 	delete(m, "tea")
+// 	fmt.Println(m)
+
+// }
+
+//struct - on;y heterogenous datatype in go
+//struct can be created in 2 ways
+
+//1st method
+
+// var Car struct {
+// 	id   int
+// 	name string
+// }
+
+// func main() {
+// 	fmt.Println(" first Example of struct")
+// 	//eg1
+// 	Car.id = 1
+// 	Car.name = "swift"
+// 	fmt.Println(Car)
+// 	fmt.Println(Car.name)
+
+// }
+
+//2nd method
+
+// type Car struct {
+// 	id      int
+// 	name    string
+// 	mileage float32
+// }
+
+// func main() {
+// 	fmt.Println("2nd example of struct")
+// 	car1 := Car{
+// 		id:      1,
+// 		name:    "Minicooper",
+// 		mileage: 10,
+// 	}
+// 	fmt.Println("details of the first car :", car1)
+// 	car2 := Car{
+// 		id:      1,
+// 		name:    "Swift",
+// 		mileage: 20,
+// 	}
+// 	fmt.Println("details of the second car :", car2)
+
+// }
+
+//eg of a complicated struct
+
 func main() {
-	fmt.Println("Golang with maps")
-	temp := map[string]string{
-		"key1": "value1",
-		"key2": "value2",
+	fmt.Println("eg of complicated struct : ")
+	type menuItem struct {
+		name   string
+		prices map[string]float64
 	}
-	fmt.Println(temp)
-
-	m := map[string][]string{
-		"coffee": {"Coffee", "Coffee-Late"},
-		"tea":    {"chai", "Latte", "Chai-Latte"},
+	menu := []menuItem{
+		{
+			name: "Coffee",
+			prices: map[string]float64{
+				"regular": 12.5,
+				"large":   20,
+			},
+		},
+		{
+			name: "tea",
+			prices: map[string]float64{
+				"single": 10,
+				"double": 15,
+				"triple": 20,
+			},
+		},
 	}
-	fmt.Println(m)
-	fmt.Println(m["coffee"])
-
-	//append
-	m["others"] = []string{"milk", "water"}
-	fmt.Println(m)
-
-	//deleting
-	delete(m, "tea")
-	fmt.Println(m)
+	fmt.Println(menu)
 
 }
