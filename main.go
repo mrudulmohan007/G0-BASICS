@@ -120,29 +120,61 @@ import "fmt"
 
 //eg of a complicated struct
 
-func main() {
-	fmt.Println("eg of complicated struct : ")
-	type menuItem struct {
-		name   string
-		prices map[string]float64
-	}
-	menu := []menuItem{
-		{
-			name: "Coffee",
-			prices: map[string]float64{
-				"regular": 12.5,
-				"large":   20,
-			},
-		},
-		{
-			name: "tea",
-			prices: map[string]float64{
-				"single": 10,
-				"double": 15,
-				"triple": 20,
-			},
-		},
-	}
-	fmt.Println(menu)
+// func main() {
+// 	fmt.Println("eg of complicated struct : ")
+// 	type menuItem struct {
+// 		name   string
+// 		prices map[string]float64
+// 	}
 
+// 	//slice of menuItem struct
+// 	menu := []menuItem{
+// 		{
+// 			name: "Coffee",
+// 			prices: map[string]float64{
+// 				"regular": 12.5,
+// 				"large":   20,
+// 			},
+// 		},
+// 		{
+// 			name: "tea",
+// 			prices: map[string]float64{
+// 				"single": 10,
+// 				"double": 15,
+// 				"triple": 20,
+// 			},
+// 		},
+// 	}
+// 	fmt.Println(menu)
+
+// }
+
+//FUNCTIONS
+func main() {
+	fmt.Println("Function example ->")
+	result := Sum(10, 20)
+	fmt.Println("Sum is : ", result)
+	sum, sub := Calc(20, 10)
+	fmt.Printf("value of sum is : %v\n value of sub is : %v\n", sum, sub)
+	PrintName("Mrudul", "Mohan")
+
+}
+
+//sum of 2 numbers function
+func Sum(a, b int) int {
+	return a + b
+}
+
+//multiple return values functions
+
+func Calc(a, b int) (int, int) {
+	sum := a + b
+	sub := a - b
+	return sum, sub
+}
+
+//variadic functions ... -> ellipsis operator
+
+func PrintName(name ...string) {
+	fmt.Println("My name is : ", name)
 }
