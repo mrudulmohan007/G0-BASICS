@@ -150,31 +150,97 @@ import "fmt"
 // }
 
 //FUNCTIONS
+// func main() {
+// 	fmt.Println("Function example ->")
+// 	result := Sum(10, 20)
+// 	fmt.Println("Sum is : ", result)
+// 	sum, sub := Calc(20, 10)
+// 	fmt.Printf("value of sum is : %v\n value of sub is : %v\n", sum, sub)
+// 	PrintName("Mrudul", "Mohan")
+
+// }
+
+// //sum of 2 numbers function
+// func Sum(a, b int) int {
+// 	return a + b
+// }
+
+// //multiple return values functions
+
+// func Calc(a, b int) (int, int) {
+// 	sum := a + b
+// 	sub := a - b
+// 	return sum, sub
+// }
+
+// //variadic functions ... -> ellipsis operator
+
+// func PrintName(name ...string) {
+// 	fmt.Println("My name is : ", name)
+// }
+
+//Loops
+//1.infinite loop
+
+// func main() {
+// 	for {
+// 		fmt.Println("Hello world")
+// 	}
+
+// }
+
+//2.condition based loops
+
+// func main() {
+// 	i := 1
+// 	for i < 5 {
+// 		fmt.Println(i)
+// 		i++
+// 	}
+// }
+
+//3.counter based loops
+
+// func main() {
+
+// 	for i := 1; i < 5; i++ {
+// 		fmt.Println(i)
+// 	}
+
+// }
+
+//4.collection based loops
+
+//eq.1- loops in array
+// func main() {
+// 	numbers := [4]int{100, 200, 300, 400}
+
+// 	// for i, v := range numbers { //i=index, v = value
+// 	// 	fmt.Println(i, v)
+// 	// }
+
+// 	for _, v := range numbers { // _ is unused variable
+// 		fmt.Println(v)
+// 	}
+
+// }
+
+//eq.2- loops in map
+
 func main() {
-	fmt.Println("Function example ->")
-	result := Sum(10, 20)
-	fmt.Println("Sum is : ", result)
-	sum, sub := Calc(20, 10)
-	fmt.Printf("value of sum is : %v\n value of sub is : %v\n", sum, sub)
-	PrintName("Mrudul", "Mohan")
+	letters := map[string]string{
+		"a": "A",
+		"b": "B",
+		"c": "C",
+	}
 
-}
+	for k, v := range letters {
+		fmt.Println(k, v)
+	}
 
-//sum of 2 numbers function
-func Sum(a, b int) int {
-	return a + b
-}
+	//to print only value,
+	for _, v := range letters {
+		fmt.Println(v)
+	}
 
-//multiple return values functions
-
-func Calc(a, b int) (int, int) {
-	sum := a + b
-	sub := a - b
-	return sum, sub
-}
-
-//variadic functions ... -> ellipsis operator
-
-func PrintName(name ...string) {
-	fmt.Println("My name is : ", name)
 }
