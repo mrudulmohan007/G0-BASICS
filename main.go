@@ -227,20 +227,68 @@ import "fmt"
 
 //eq.2- loops in map
 
+// func main() {
+// 	letters := map[string]string{
+// 		"a": "A",
+// 		"b": "B",
+// 		"c": "C",
+// 	}
+
+// 	for k, v := range letters {
+// 		fmt.Println(k, v)
+// 	}
+
+// 	//to print only value,
+// 	for _, v := range letters {
+// 		fmt.Println(v)
+// 	}
+
+// }
+
+//CONDITION STATEMENTS  / BRANCHING
+
 func main() {
-	letters := map[string]string{
-		"a": "A",
-		"b": "B",
-		"c": "C",
+	fmt.Println("Branching/Condition Statements")
+	i := 5
+	//1.If Statements
+	if i < 6 {
+		fmt.Println("i<6")
+	} else if i > 6 {
+		fmt.Println("i>6")
+	} else {
+		fmt.Println("Failed")
 	}
 
-	for k, v := range letters {
-		fmt.Println(k, v)
+	//2.switch statements
+	//condition based switch
+	switch i {
+	case 3:
+		fmt.Println("Value is 3")
+	case 5:
+		fmt.Println("Value is 5")
+	default:
+		fmt.Println("Default value")
+	}
+	//logical switch
+	switch {
+	case i < 6:
+		fmt.Println("i<6")
+	case i > 6:
+		fmt.Println("i>6")
+	default:
+		fmt.Println("Default value")
 	}
 
-	//to print only value,
-	for _, v := range letters {
-		fmt.Println(v)
+	//3.goto statement
+	c := 8
+	if c > 7 {
+		fmt.Println("c is > 7")
+		goto mylabel
+	}
+
+mylabel:
+	if c > 7 {
+		fmt.Println("after label : c>7")
 	}
 
 }
