@@ -295,11 +295,37 @@ import "fmt"
 
 //OOP IN GO
 
-type Number int //custom data type
+// type Number int //custom data type
 
+// func (num Number) is_even() bool {     -> //method receiver function
+// 	return num%2 == 0
+// }
+
+// func main() {
+// 	fmt.Println("Oops demo in go")
+// 	var num Number
+// 	num = 10
+// 	fmt.Println(num)
+// 	fmt.Println(num.is_even())
+// }
+
+type Car struct {
+	Name  string
+	Model string
+	Year  int
+}
+
+func (c Car) print() string { //method receiver function
+	return c.Name + "-" + c.Model
+
+}
 func main() {
 	fmt.Println("Oops demo in go")
-	var num Number
-	num = 10
-	fmt.Println(num)
+	minicooper := Car{
+		Name:  "MC",
+		Model: "Latest-2021",
+		Year:  2021,
+	}
+	fmt.Println(minicooper)
+	fmt.Println(minicooper.print())
 }
