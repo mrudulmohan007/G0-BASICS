@@ -309,23 +309,84 @@ import "fmt"
 // 	fmt.Println(num.is_even())
 // }
 
-type Car struct {
-	Name  string
-	Model string
-	Year  int
+// type Car struct {
+// 	Name  string
+// 	Model string
+// 	Year  int
+// }
+
+// func (c Car) print() string {         //method receiver function
+// 	return c.Name + "-" + c.Model
+
+// }
+// func main() {
+// 	fmt.Println("Oops demo in go")
+// 	minicooper := Car{
+// 		Name:  "MC",
+// 		Model: "Latest-2021",
+// 		Year:  2021,
+// 	}
+// 	fmt.Println(minicooper)
+// 	fmt.Println(minicooper.print())
+// }
+
+//INTERFACE(not complete , so dont refer)
+
+// type PetrolEngine struct {
+// 	Name string
+// }
+
+// func (e PetrolEngine) Start() {
+// 	fmt.Println("Starting ......", e.Name)
+// }
+
+// type GasEngine struct {
+// 	Name string
+// }
+
+// func (e GasEngine) Start() {
+// 	fmt.Println("Starting ......", e.Name)
+// }
+
+// func main() {
+// 	fmt.Println("interfaces example : ")
+// 	waganorEngine := PetrolEngine{
+// 		Name: "waganor",
+// 	}
+// 	waganorEngine.Start()
+
+// 	gasEngine := GasEngine{
+// 		Name: "gas",
+// 	}
+// 	gasEngine.Start()
+// }
+
+//interface example::
+
+type Runner interface {
+	Run()
 }
 
-func (c Car) print() string { //method receiver function
-	return c.Name + "-" + c.Model
-
+type Dog struct {
+	Name string
 }
+
+func (d Dog) Run() {
+	fmt.Println(d.Name, "is running")
+}
+
+type Cat struct {
+	Name string
+}
+
+func (c Cat) Run() {
+	fmt.Println(c.Name, "is running")
+}
+
 func main() {
-	fmt.Println("Oops demo in go")
-	minicooper := Car{
-		Name:  "MC",
-		Model: "Latest-2021",
-		Year:  2021,
-	}
-	fmt.Println(minicooper)
-	fmt.Println(minicooper.print())
+	var runner Runner
+	runner = Dog{Name: "Australian shepherd"}
+	runner.Run()
+	runner = Cat{Name: "persian cat"}
+	runner.Run()
 }
